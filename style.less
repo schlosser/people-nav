@@ -1,0 +1,131 @@
+@blue: #0E57A3;
+@gray: #eee;
+@headSize: 4rem;
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-weight: 300;
+    line-height: 4rem;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top:0;
+    bottom:0;
+    background-color: @blue;
+    width: @headSize;
+}
+
+.example {
+    height: 75vh;
+    padding-left: (@headSize * 2);
+    &:nth-child(odd) {
+        background-color: @gray;
+    }
+}
+
+@spacing: (@headSize / 8);
+@bottom: (@headSize / 4);
+@top: (@headSize / 4);
+.heads {
+    padding-left: (@headSize / 2);
+    position: relative;
+    height: 100%;
+    li {
+        box-shadow: 0 0 2px black;
+        width: @headSize;
+        height: @headSize;
+        border-radius: @headSize;
+        overflow: hidden;
+        position: absolute;
+        transition: 0.05s linear all;
+
+        &.before-pickup, &.after-dropoff, &.fixed {
+            transition: none;
+        }
+
+        &[data-head="1"] {z-index: (240 - 10) }
+        &[data-head="2"] {z-index: (240 - 20) }
+        &[data-head="3"] {z-index: (240 - 30) }
+        &[data-head="4"] {z-index: (240 - 40) }
+        &[data-head="5"] {z-index: (240 - 50) }
+        &[data-head="6"] {z-index: (240 - 60) }
+        &[data-head="7"] {z-index: (240 - 70) }
+        &[data-head="8"] {z-index: (240 - 80) }
+        &[data-head="9"] {z-index: (240 - 90) }
+        &[data-head="10"] {z-index: (240 - 100) }
+        &[data-head="11"] {z-index: (240 - 110) }
+
+        &.bottom-0 {
+            bottom: @bottom;
+            &.start-bottom-1 { bottom: (@bottom + @spacing); }
+            &.start-bottom-2 { bottom: (@bottom + @spacing * 2); }
+        }
+        &.bottom-1 { bottom: (@bottom + @spacing); }
+        &.bottom-2 { bottom: (@bottom + @spacing * 2); }
+
+        &.top-0 {
+            top: @top;
+            &.start-top-1 { top: (@top + @spacing); }
+            &.start-top-2 { top: (@top + @spacing * 2); }
+        }
+        &.top-1 { top: (@top + @spacing); }
+        &.top-2 { top: (@top + @spacing * 2); }
+
+        img {
+            width: @headSize;
+            height: @headSize;
+        }
+    }
+}
+
+.cards {
+
+    .card {
+        padding: (@headSize / 2) 0 0 (@headSize * 2);
+        height: 20rem;
+
+        &:nth-child(even) {
+            background-color: @gray;
+        }
+    }
+}
