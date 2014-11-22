@@ -1,12 +1,12 @@
 $(function() {
     $(window).scroll(function() {
-    	var headSize = 60,
-    		bottom = 15,
-    		top = 15,
-    		stackOffset = 7.5,
+    	var headSize = 90,
+    		bottom = 22.5,
+    		top = 22.5,
+    		stackOffset = 11.25,
     		numStacks = 3,
-    		pickupOffset = 30,
-    		paddingTop = 30,
+    		pickupOffset = 45,
+    		paddingTop = 45,
     		headStart = bottom + (numStacks - 1) * stackOffset
     		headPickup = headStart + 2 * headSize + pickupOffset,
     		headDropoff = headStart + headSize + pickupOffset,
